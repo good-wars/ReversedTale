@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsqpkxwvpfppx"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_eqqev"]
+[ext_resource type="Texture2D" uid="uid://lpdxwhcm6mt7" path="res://assets/asriel.png" id="2_jdwev"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_45eop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jdwev")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qifmj"]
+size = Vector2(18, 37)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_eqqev")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_45eop")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qifmj")

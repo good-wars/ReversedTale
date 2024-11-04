@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://vkfcjpixohq3"]
+
+[ext_resource type="PackedScene" uid="uid://dsqpkxwvpfppx" path="res://Scenes/alive/player.tscn" id="1_t4him"]
+
+[sub_resource type="GDScript" id="GDScript_roqx6"]
+resource_name = "room2"
+script/source = "extends Node2D
+
+var Room = load(\"res://scripts/Room.gd\")
+var room2 = Room.new()
+
+func _ready() -> void:
+	pass
+"
+
+[node name="Room2" type="Node2D"]
+script = SubResource("GDScript_roqx6")
+
+[node name="player" parent="." instance=ExtResource("1_t4him")]
+position = Vector2(50, 169)

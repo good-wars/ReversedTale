@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbrd6i1okd01m"]
+
+[ext_resource type="Script" path="res://scripts/Items/test_tem.gd" id="1_hknmq"]
+[ext_resource type="Texture2D" uid="uid://c72y23i3s1784" path="res://icon.svg" id="1_l7flb"]
+
+[node name="Test_tem" type="Sprite2D"]
+position = Vector2(31, 30)
+scale = Vector2(0.492188, 0.451172)
+texture = ExtResource("1_l7flb")
+script = ExtResource("1_hknmq")

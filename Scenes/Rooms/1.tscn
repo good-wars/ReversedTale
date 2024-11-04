@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfhitlype6jq8"]
+
+[ext_resource type="PackedScene" uid="uid://bbrd6i1okd01m" path="res://testScenes/test_tem.tscn" id="1_ojyjp"]
+[ext_resource type="PackedScene" uid="uid://f48sy70s0rw7" path="res://testScenes/test_te2.tscn" id="2_inv0e"]
+[ext_resource type="PackedScene" uid="uid://dsqpkxwvpfppx" path="res://Scenes/alive/player.tscn" id="3_ssips"]
+
+[sub_resource type="GDScript" id="GDScript_8m5aq"]
+resource_name = "Scene_1"
+script/source = "extends Node2D
+
+var Room = load(\"res://scripts/Room.gd\")
+var room1 = Room.new()
+
+func _ready() -> void:
+	room1.createRoom(1)
+	
+	print(Save.roomsCount)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a625p"]
+size = Vector2(88.074, 24.2465)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kh5f"]
+size = Vector2(815, 11)
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_8m5aq")
+
+[node name="Test_tem" parent="." instance=ExtResource("1_ojyjp")]
+position = Vector2(96, 62)
+
+[node name="Test_tem222" parent="." instance=ExtResource("2_inv0e")]
+position = Vector2(174, 63)
+
+[node name="player" parent="." instance=ExtResource("3_ssips")]
+position = Vector2(363, 163)
+motion_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(804, 300)
+rotation = -3.14159
+scale = Vector2(0.0901716, 24.7781)
+shape = SubResource("RectangleShape2D_a625p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-4, 301)
+rotation = -3.14159
+scale = Vector2(0.0901716, 24.7781)
+shape = SubResource("RectangleShape2D_a625p")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(401, 606)
+shape = SubResource("RectangleShape2D_3kh5f")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(399.5, -3)
+shape = SubResource("RectangleShape2D_3kh5f")
